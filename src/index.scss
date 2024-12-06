@@ -1,0 +1,9 @@
+@forward "./components/header/Header.scss";
+@forward "./components/bubbles/Bubbles.scss";
+@forward "./components/About/About.scss";
+@forward "./components/humanBody/HumanBody.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+}

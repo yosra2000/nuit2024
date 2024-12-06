@@ -1,0 +1,132 @@
+.header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px) brightness(0.5);
+    z-index: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  &__content {
+    width: 70%;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 82px;
+
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      gap: 42px;
+      margin-bottom: 62px;
+
+      @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &__img {
+        padding: 12px;
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+        border-radius: 22px;
+      }
+
+      &__text {
+        max-width: 768px;
+      }
+    }
+
+    &__btn__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 35px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &__btn {
+        padding: 10px 22px;
+        border-radius: 9.3px;
+        color: #fff;
+        font-size: 18.6px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 27.899px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border: none;
+      }
+
+      &__btn-primary {
+        background: #0286be;
+
+        &:hover {
+          box-shadow: 1px 1px 12px 5px rgba(1, 136, 247, 0.4);
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          );
+          transition: all 650ms;
+        }
+
+        &:hover:before {
+          left: 100%;
+        }
+      }
+    }
+  }
+}
